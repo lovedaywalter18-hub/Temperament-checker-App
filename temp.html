@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Temperament Quiz</title>
+<link rel="stylesheet" href="temp.css">
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0a0c10">
+<link rel="apple-touch-icon" href="icon-192.png">
+</head>
+<body>
+<div class="container">
+  <!-- ===== MENU NAV ===== -->
+  <nav class="top-nav">
+    <div class="logo">Temperament</div>
+    <div class="menu-wrapper">
+      <button id="menuToggle" class="menu-toggle">☰ Menu</button>
+      <div id="menuDropdown" class="menu-dropdown">
+        <button id="menuHomeBtn">🏠 Home</button>
+        <button id="menuInstructionsBtn">📖 Instructions</button>
+        <button id="menuStartTestBtn">▶️ Start Test</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HOME VIEW ===== -->
+  <div id="homeView" class="view">
+    <div class="home-hero">
+      <h1>Discover Your Temperament</h1>
+      <p>Are you Choleric, Sanguine, Melancholic or Phlegmatic? Understand how you naturally think, lead, and relate with people.</p>
+      <div class="home-cards">
+        <div class="mini-card choleric">Choleric - Leader</div>
+        <div class="mini-card sanguine">Sanguine - People Person</div>
+        <div class="mini-card melancholic">Melancholic - Thinker</div>
+        <div class="mini-card phlegmatic">Phlegmatic - Peacemaker</div>
+      </div>
+      <button id="homeStartBtn" class="primary large">Start Test</button>
+      <button id="homeInstructionsBtn" class="secondary large">Read Instructions</button>
+    </div>
+  </div>
+
+  <!-- ===== INSTRUCTIONS VIEW ===== -->
+  <div id="instructionsView" class="view" style="display:none;">
+    <div class="instruction-box">
+      <h2>Instructions</h2>
+      <p><strong>Please take this test with sincerity.</strong></p>
+      <ul class="instruction-list">
+        <li>Your sincerity is needed to get your true temperament result.</li>
+        <li>Answer how you <strong>really are</strong>, not how you wish to be.</li>
+        <li>There are no right or wrong answers - be honest with yourself.</li>
+        <li>There are 16 questions. Choose the option that fits you most.</li>
+        <li>Take your time, stay calm, and avoid overthinking.</li>
+        <li>Your result will show your primary temperament and secondary blend.</li>
+      </ul>
+      <button id="instructionsStartBtn" class="primary large">I Understand - Start Test</button>
+    </div>
+  </div>
+
+  <!-- ===== QUIZ VIEW ===== -->
+  <div id="quizView" class="view" style="display:none;">
+    <div class="header" id="header">
+      <div class="header-top">
+        <h1>Temperament Quiz</h1>
+        <div class="q-counter" id="qCounter">1 / 16</div>
+      </div>
+      <div class="progress"><div id="progressBar"></div></div>
+    </div>
+
+    <div class="content">
+      <div class="q-wrapper" id="qWrapper"></div>
+      <div class="btn-group">
+        <button type="button" class="secondary" id="prevBtn" disabled>Previous</button>
+        <button type="button" id="nextBtn" disabled>Next</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== RESULT VIEW ===== -->
+  <div class="result view" id="result" style="display:none;">
+    <div class="badge" id="badge"></div>
+    <h2 id="resultTitle"></h2>
+    <p id="resultDesc"></p>
+    
+    <div class="traits">
+      <h3>How people with this temperament usually behave</h3>
+      <ul id="traitsList"></ul>
+    </div>
+    
+    <div class="advice">
+      <h3>Advice to keep you balanced</h3>
+      <ul id="adviceList"></ul>
+    </div>
+
+    <div id="scoreBreakdown" style="margin-top:20px;font-size:14px;opacity:0.8;"></div>
+
+    <div class="result-actions">
+      <button class="secondary" id="retakeBtn">Retake Test</button>
+      <button class="primary" id="homeBtn">Return to Home</button>
+    </div>
+  </div>
+</div>
+
+<script src="temp.js"></script>
+    <script>
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('service-worker.js');
+}
+</script>
+</body>
+</html>
