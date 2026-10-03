@@ -2,7 +2,7 @@
   "name": "Temperament Quiz",
   "short_name": "Temperament",
   "description": "Discover your temperament - Choleric, Sanguine, Melancholic, Phlegmatic",
-  "start_url": "./temp.html",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#0a0c10",
   "theme_color": "#0a0c10",
